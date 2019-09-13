@@ -81,7 +81,7 @@ namespace CustomListTest
 
         }
         [TestMethod]
-        public void Add_FourItemToExistingList_ItemCountIncreaseOneIncrement()
+        public void Add_NewItemToExistingList_ItemCountIncreaseOneIncrement()
         {
             // arrayange
             CustomList<int> testList = new CustomList<int>();
@@ -89,11 +89,11 @@ namespace CustomListTest
             testList.Add(2);
             testList.Add(3);
             testList.Add(4);
-            int expected = 4;
+            int expected = 5;
             int actual;
 
             // Act
-            testList.Add(4);
+            testList.Add(5);
             actual = testList.Count;
 
             // Assert

@@ -59,13 +59,11 @@ namespace CustomList
         public void IncreaseArray()
         {
             T[] newArray = new T[capacity];
-
         }
         public int Count
         {
             get { return count; }
         }
-
 
 
     }
