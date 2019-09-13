@@ -8,10 +8,24 @@ namespace CustomList
 {
     public class CustomList<T>
     {
-        private T[] items;
+        private T[] arr = new T[4];
+        int nextIndex = 0;
+        int count;
+        public T this[int i] => arr[i];
+        public void Add(T value)
+        {
+
+        }
+
+        public int Count
+        {
+            get { return count; }
+        }
+
+        private T[] item;
         public CustomList()
         {
-            items = new T[5];
+            item = new T[4];
         }
     }
 }

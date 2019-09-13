@@ -26,17 +26,14 @@ namespace CustomListTest
         [TestMethod]
         public void Add_NewItemToEmptyList_ItemAddedToIndexZero()
         {
-            // Condition to test:
-            // Add an item to an empty list and new item will be in [0] index.
-
             // Arrange
-            CustomList<int> test = new CustomList<int>();
-            int expected = 5;
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 4;
             int actual;
 
             // Act
-            test.Add(5);
-            actual = test[0];
+            testList.Add(4);
+            actual = testList[0];
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -44,39 +41,40 @@ namespace CustomListTest
         }
         public void Add_NewItemToEmptyList_ItemCountIncreaseOneIncrement()
         {
-            // Condition to test:
-            // Add an item to an empty list and item count increases one increment.
-
             // Arrange
-
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 1;
+            int actual;
 
             // Act
-
+            testList.Add(4);
+            actual = testList.Count;
 
             // Assert
-
+            Assert.AreEqual(expected, actual);
 
         }
         public void Add_NewItemToExistingList_ItemAddedToEndOfList()
         {
-            // Condition to test:
-            // Add an item to an existing list and new item is added at the end of the list.
-
             // Arrange
-
+            CustomList<int> testList = new CustomList<int>();
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            int expected = 4;
+            int actual;
 
             // Act
-
+            testList.Add(4);
+            actual = testList[3];
 
             // Assert
-
+            Assert.AreEqual(expected, actual);
 
         }
         public void Add_NewItemToExistingList_ItemCountIncreaseOneIncrement()
         {
-            // Condition to test:
-            // Add an item to an existing list and item count increases one increment.
-
             // Arrange
 
 
