@@ -8,25 +8,9 @@ namespace CustomListTest
     public class CustomListTest
     {
         [TestMethod]
-        public void Method_Condition_ExpectedResult()
-        {
-            // Condition to test:
-
-
-            // Arrange
-
-
-            // Act
-
-
-            // Assert
-
-
-        }
-        [TestMethod]
         public void Add_NewItemToEmptyList_ItemAddedToIndexZero()
         {
-            // Arrange
+            // arrayange
             CustomList<int> testList = new CustomList<int>();
             int expected = 4;
             int actual;
@@ -39,9 +23,10 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
         public void Add_NewItemToEmptyList_ItemCountIncreaseOneIncrement()
         {
-            // Arrange
+            // arrayange
             CustomList<int> testList = new CustomList<int>();
             int expected = 1;
             int actual;
@@ -54,9 +39,51 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
 
         }
-        public void Add_NewItemToExistingList_ItemAddedToEndOfList()
+        [TestMethod]
+        public void Add_FourItemToList_ItemAddedToEndOfList()
         {
-            // Arrange
+            // arrayange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 4;
+            int actual;
+
+            // Act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            actual = testList[3];
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void Add_SevenItemToList_ItemAddedToEndOfList()
+        {
+            // arrayange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 7;
+            int actual;
+
+            // Act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
+            testList.Add(6);
+            testList.Add(7);
+            actual = testList[6];
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void Add_FourItemToExistingList_ItemCountIncreaseOneIncrement()
+        {
+            // arrayange
             CustomList<int> testList = new CustomList<int>();
             testList.Add(1);
             testList.Add(2);
@@ -67,23 +94,10 @@ namespace CustomListTest
 
             // Act
             testList.Add(4);
-            actual = testList[3];
+            actual = testList.Count;
 
             // Assert
             Assert.AreEqual(expected, actual);
-
-        }
-        public void Add_NewItemToExistingList_ItemCountIncreaseOneIncrement()
-        {
-            // Arrange
-
-
-            // Act
-
-
-            // Assert
-
-
         }
     }
 }
