@@ -10,7 +10,7 @@ namespace CustomListTest
         [TestMethod]
         public void Add_NewItemToEmptyList_ItemAddedToIndexZero()
         {
-            // arrayange
+            // Arrange
             CustomList<int> testList = new CustomList<int>();
             int expected = 4;
             int actual;
@@ -26,7 +26,7 @@ namespace CustomListTest
         [TestMethod]
         public void Add_NewItemToEmptyList_ItemCountIncreaseOneIncrement()
         {
-            // arrayange
+            // Arrange
             CustomList<int> testList = new CustomList<int>();
             int expected = 1;
             int actual;
@@ -42,7 +42,7 @@ namespace CustomListTest
         [TestMethod]
         public void Add_FourItemToList_ItemAddedToEndOfList()
         {
-            // arrayange
+            // Arrange
             CustomList<int> testList = new CustomList<int>();
             int expected = 4;
             int actual;
@@ -61,7 +61,7 @@ namespace CustomListTest
         [TestMethod]
         public void Add_SevenItemToList_ItemAddedToEndOfList()
         {
-            // arrayange
+            // Arrange
             CustomList<int> testList = new CustomList<int>();
             int expected = 7;
             int actual;
@@ -83,7 +83,7 @@ namespace CustomListTest
         [TestMethod]
         public void Add_NewItemToExistingList_ItemCountIncreaseOneIncrement()
         {
-            // arrayange
+            // Arrange
             CustomList<int> testList = new CustomList<int>();
             testList.Add(1);
             testList.Add(2);
@@ -95,6 +95,25 @@ namespace CustomListTest
             // Act
             testList.Add(5);
             actual = testList.Count;
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Remove_ItemFromExistingList_LastItemTakesPlaceOfRemovedItem()
+        {
+            // Arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 4;
+            int actual;
+
+            // Act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Remove(3);
+            actual = testList[3];
 
             // Assert
             Assert.AreEqual(expected, actual);
