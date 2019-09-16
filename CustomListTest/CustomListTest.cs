@@ -104,42 +104,17 @@ namespace CustomListTest
         {
             // Arrange
             CustomList<int> testList = new CustomList<int>();
-            int expected = 3;
+            int expected = 5;
             int actual;
 
             // Act
             testList.Add(1);
             testList.Add(2);
-            testList.Add(3);
-            testList.Add(3);
-            testList.Add(4);
-            testList.Remove(3);
-            actual = testList[2];
-
-            // Assert
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void Remove_MultipleItemsFromList_ItemsShiftToTakesPlaceOfRemovedItem()
-        {
-            // Arrange
-            CustomList<int> testList = new CustomList<int>();
-            int expected = 3;
-            int actual;
-
-            // Act
-            testList.Add(1);
-            testList.Add(2);
-            testList.Add(13);
-            testList.Add(14);
-            testList.Add(15);
             testList.Add(3);
             testList.Add(4);
             testList.Add(5);
-            testList.Remove(13);
-            testList.Remove(14);
-            testList.Remove(15);
-            actual = testList[2];
+            testList.Remove(4);
+            actual = testList[3];
 
             // Assert
             Assert.AreEqual(expected, actual);

@@ -28,7 +28,7 @@ namespace CustomList
         }
         public void Add(T value)
         {
-            if(VerifyCapacity())
+            if (VerifyCapacity())
             {
                 DoubleArray();
             }
@@ -38,7 +38,7 @@ namespace CustomList
         public void DoubleArray()
         {
             T[] value = new T[capacity];
-            for(int i = 0; i < count; i++)
+            for (int i = 0; i < count; i++)
             {
                 value[i] = array[i];
             }
@@ -46,7 +46,7 @@ namespace CustomList
         }
         public bool VerifyCapacity()
         {
-            if(count >= capacity)
+            if (count >= capacity)
             {
                 DoubleCapacity();
                 return true;
@@ -62,8 +62,6 @@ namespace CustomList
         }
         public void Remove(T value)
         {
-            // { 1, 7, 2, 3, 2, 5, 0, 0, 0 }
-            // find the index of the first match to the value user is trying to remove
             int indexToStartAt = 0;
             for (int i = 0; i < count; i++)
             {
@@ -77,30 +75,15 @@ namespace CustomList
             {
                 array[i] = array[i + 1];
             }
-
-
-
-            // { 1, 7, 2, 3, 2, 5, 0, 0, 0 } count 6 array size 9
-            // { 7, 2, 3, 2, 5, 5, 0, 0, 0 } count 5
-
-            // { 1, 7, 2, 3, 2, 5, 0, 0, 0 } count 6 array size 9
-            // { 1, 7, 3, 2, 5, 5,, 0, 0 } count 5
-
-
-
-            // shift values in your array (think overwrite) the value you are getting rid of
-            //ShiftArray();
-
-
-
             count--;
+            //bool matchFound = false;
+            //for(int i = 0; i < count; i++)
+            //{
+            //    if (array[i].Equals(value))
+            //        matchFound = true;
+            //    if (matchFound)
+            //        array[i] = array[i + 1];
+            //}
         }
-        //public void ShiftArray()
-        //{
-        //    for (int i = 0; i < count; i++)
-        //    {
-        //        array[i] = array[i + 1];
-        //    }
-        //}
     }
 }
