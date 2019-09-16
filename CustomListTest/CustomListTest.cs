@@ -151,16 +151,16 @@ namespace CustomListTest
         public void ToString_ConvertListToString_ReturnContentToString()
         {
             // Arrange
-            CustomList<string> testList = new CustomList<string>();
-            string expected = "Florida, Gators, is, the, best";
+            CustomList<int> testList = new CustomList<int>();
+            string expected = "1, 2, 3, 4, 5";
             string actual;
 
             // Act
-            testList.Add("Florida");
-            testList.Add("Gators");
-            testList.Add("is");
-            testList.Add("the");
-            testList.Add("best");
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
             actual = testList.ToString();
 
             // Assert

@@ -87,7 +87,13 @@ namespace CustomList
         }
         public override string ToString()
         {
-            return base.ToString();
+            string itemsToString = "";
+            for(int i = 0; i < count; i++)
+            {
+                itemsToString += array[i].ToString();
+
+            }
+            return itemsToString;
         }
     }
 }
