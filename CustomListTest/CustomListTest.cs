@@ -147,19 +147,21 @@ namespace CustomListTest
             // Assert
             Assert.AreEqual(expected, actual);
         }
-        public void Add_String_ConvertsContentToString()
+        [TestMethod]
+        public void ToString_ConvertListToString_ReturnContentToString()
         {
             // Arrange
-            CustomList<int> testList = new CustomList<int>();
-            int expected = 1;
-            int actual;
+            CustomList<string> testList = new CustomList<string>();
+            string expected = "Florida, Gators, is, the, best";
+            string actual;
 
             // Act
-            testList.Add(1);
-            testList.Add(2);
-            testList.Add(3);
-            testList.ToString();
-            actual = testList.Count;
+            testList.Add("Florida");
+            testList.Add("Gators");
+            testList.Add("is");
+            testList.Add("the");
+            testList.Add("best");
+            actual = testList.ToString();
 
             // Assert
             Assert.AreEqual(expected, actual);
