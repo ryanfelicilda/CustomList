@@ -90,7 +90,15 @@ namespace CustomList
             string itemsToString = "";
             for(int i = 0; i < count; i++)
             {
-                itemsToString += array[i].ToString();
+                if(i + 1 == count)
+                {
+                    itemsToString += array[i].ToString() + "";
+                }
+                else
+                {
+                    itemsToString += array[i].ToString() + ", ";
+                }
+
 
             }
             return itemsToString;
