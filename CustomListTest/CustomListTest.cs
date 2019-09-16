@@ -147,5 +147,22 @@ namespace CustomListTest
             // Assert
             Assert.AreEqual(expected, actual);
         }
+        public void Add_String_ConvertsContentToString()
+        {
+            // Arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 1;
+            int actual;
+
+            // Act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.ToString();
+            actual = testList.Count;
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

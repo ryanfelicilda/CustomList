@@ -77,13 +77,17 @@ namespace CustomList
             }
             count--;
             //bool matchFound = false;
-            //for(int i = 0; i < count; i++)
+            //for (int i = 0; i < count; i++)
             //{
             //    if (array[i].Equals(value))
             //        matchFound = true;
             //    if (matchFound)
             //        array[i] = array[i + 1];
             //}
+        }
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }
