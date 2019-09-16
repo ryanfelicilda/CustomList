@@ -10,7 +10,6 @@ namespace CustomList
     {
         private T[] array;
         int count;
-        int newCount;
         int capacity;
         public T this[int i]
         {
@@ -67,7 +66,7 @@ namespace CustomList
         }
         public void Remove(T value)
         {
-        
+            count--;
         }
     }
 }
