@@ -81,18 +81,18 @@ namespace CustomListTest
 
         }
         [TestMethod]
-        public void Add_NewItemToExistingList_ItemCountIncreaseOneIncrement()
+        public void Add_MultipleItemToList_ItemCountIncreaseOneIncrement()
         {
             // Arrange
             CustomList<int> testList = new CustomList<int>();
-            testList.Add(1);
-            testList.Add(2);
-            testList.Add(3);
-            testList.Add(4);
             int expected = 5;
             int actual;
 
             // Act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
             testList.Add(5);
             actual = testList.Count;
 
@@ -100,20 +100,21 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Remove_ItemFromList_LastItemTakesPlaceOfRemovedItem()
+        public void Remove_ItemFromList_ItemShiftToTakesPlaceOfRemovedItem()
         {
             // Arrange
             CustomList<int> testList = new CustomList<int>();
-            int expected = 4;
+            int expected = 3;
             int actual;
 
             // Act
             testList.Add(1);
             testList.Add(2);
             testList.Add(3);
+            testList.Add(3);
             testList.Add(4);
             testList.Remove(3);
-            actual = testList[3];
+            actual = testList[2];
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -123,22 +124,22 @@ namespace CustomListTest
         {
             // Arrange
             CustomList<int> testList = new CustomList<int>();
-            int expected = 5;
+            int expected = 3;
             int actual;
 
             // Act
             testList.Add(1);
             testList.Add(2);
+            testList.Add(13);
+            testList.Add(14);
+            testList.Add(15);
             testList.Add(3);
             testList.Add(4);
             testList.Add(5);
-            testList.Add(6);
-            testList.Add(7);
-            testList.Add(8);
-            testList.Remove(3);
-            testList.Remove(4);
-            testList.Remove(5);
-            actual = testList[4];
+            testList.Remove(13);
+            testList.Remove(14);
+            testList.Remove(15);
+            actual = testList[2];
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -148,6 +149,10 @@ namespace CustomListTest
         {
             // Arrange
             CustomList<int> testList = new CustomList<int>();
+            int expected = 8;
+            int actual;
+
+            // Act
             testList.Add(1);
             testList.Add(2);
             testList.Add(3);
@@ -159,10 +164,6 @@ namespace CustomListTest
             testList.Add(9);
             testList.Add(10);
             testList.Add(11);
-            int expected = 8;
-            int actual;
-
-            // Act
             testList.Remove(5);
             testList.Remove(3);
             testList.Remove(1);

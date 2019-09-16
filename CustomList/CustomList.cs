@@ -56,17 +56,51 @@ namespace CustomList
                 return false;
             }
         }
-        public void IncreaseArray()
-        {
-            T[] newArray = new T[capacity];
-        }
         public int Count
         {
             get { return count; }
         }
         public void Remove(T value)
         {
+            // { 1, 7, 2, 3, 2, 5, 0, 0, 0 }
+            // find the index of the first match to the value user is trying to remove
+            int indexToStartAt = 0;
+            for (int i = 0; i < count; i++)
+            {
+                if (array[i].Equals(value))
+                {
+                    indexToStartAt = i;
+                }
+            }
+
+            for (int i = indexToStartAt; i < count; i++)
+            {
+                array[i] = array[i + 1];
+            }
+
+
+
+            // { 1, 7, 2, 3, 2, 5, 0, 0, 0 } count 6 array size 9
+            // { 7, 2, 3, 2, 5, 5, 0, 0, 0 } count 5
+
+            // { 1, 7, 2, 3, 2, 5, 0, 0, 0 } count 6 array size 9
+            // { 1, 7, 3, 2, 5, 5,, 0, 0 } count 5
+
+
+
+            // shift values in your array (think overwrite) the value you are getting rid of
+            //ShiftArray();
+
+
+
             count--;
         }
+        //public void ShiftArray()
+        //{
+        //    for (int i = 0; i < count; i++)
+        //    {
+        //        array[i] = array[i + 1];
+        //    }
+        //}
     }
 }
